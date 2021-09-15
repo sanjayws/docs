@@ -10,13 +10,13 @@ module.exports = {
   organizationName: 'chatwoot',
   projectName: 'docs',
   themeConfig: {
-    sidebarCollapsible: false,
     image: 'https://www.chatwoot.com/images/preview.png',
     navbar: {
       logo: {
         href: "https://www.chatwoot.com",
         alt: 'Chatwoot',
         src: 'img/logo.png',
+        srcDark: 'img/logo-white.png', // Default to `logo.src`.
         target: '_self',
       },
       items: [
@@ -30,6 +30,12 @@ module.exports = {
           to: 'product',
           activeBasePath: 'product',
           label: 'Product',
+          position: 'right',
+        },
+        {
+          to: 'user-guide/configure-chatwoot-account',
+          activeBasePath: 'user-guide',
+          label: 'User Guide',
           position: 'right',
         },
         {
@@ -66,9 +72,11 @@ module.exports = {
       {
         docs: {
           routeBasePath: '/',
+          sidebarCollapsible: false,
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/chatwoot/docs/edit/main/',
+          editUrl: 'https://github.com/chatwoot/docs/edit/main/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,

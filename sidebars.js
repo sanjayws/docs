@@ -5,6 +5,14 @@ module.exports = {
       label: "Company",
       items: [
         "handbook/about-chatwoot/history",
+        "handbook/about-chatwoot/investors",
+      ],
+    },
+    {
+      type: "category",
+      label: "Culture",
+      items: [
+        "handbook/how-we-work/communication"
       ],
     },
     {
@@ -21,6 +29,7 @@ module.exports = {
         "handbook/engineering/issue-triage",
         "handbook/engineering/pr-guidelines",
         "handbook/engineering/release-process",
+        "handbook/engineering/faq",
       ],
     },
     {
@@ -42,6 +51,7 @@ module.exports = {
         "self-hosted/deployment/heroku",
         "self-hosted/deployment/caprover",
         "self-hosted/deployment/docker",
+        "self-hosted/deployment/helm-charts",
         "self-hosted/deployment/linux-vm",
         "self-hosted/deployment/clevercloud",
       ],
@@ -58,11 +68,14 @@ module.exports = {
     {
       Monitoring: [
         "self-hosted/monitoring/super-admin-sidekiq",
+        "self-hosted/monitoring/apm-and-error-monitoring",
+        "self-hosted/monitoring/rate-limiting"
       ],
     },
     {
       "Email Channel": [
         "self-hosted/configuration/features/email-channel/conversation-continuity",
+        "self-hosted/configuration/features/email-channel/conversation-continuity-using-sendgrid",
         "self-hosted/configuration/features/email-channel/setup",
       ],
     },
@@ -80,9 +93,22 @@ module.exports = {
         "self-hosted/deployment/storage/gcs-bucket",
       ],
     },
+    { Others: ["self-hosted/telemetry"] },
   ],
   product: [
-    { "Getting Started": ["product"] },
+    { "Getting Started": [
+        "product",
+        "product/channels/supported-features",
+        "product/features/campaigns",
+        "product/features/webhooks",
+      ]
+    },
+    { "Channels": [
+        "product/channels/facebook",
+        "product/channels/twitter",
+        "product/channels/twilio-whatsapp-sms",
+      ]
+    },
     {
       "Website Live Chat": [
         "product/channels/live-chat/create-website-channel",
@@ -98,7 +124,8 @@ module.exports = {
         "product/channels/live-chat/integrations/docusaurus",
         "product/channels/live-chat/integrations/google-tag-manager",
         "product/channels/live-chat/integrations/react-native-widget",
-        "product/channels/live-chat/integrations/nextjs"
+        "product/channels/live-chat/integrations/nextjs",
+        "product/channels/live-chat/integrations/wordpress"
       ]
     },
     {
@@ -115,15 +142,71 @@ module.exports = {
       ]
     },
     {
-      Others: [
-        "product/channels/facebook",
-        "product/channels/twitter",
-        "product/channels/twilio-whatsapp-sms",
-        "product/channels/supported-features",
-        "product/features/webhooks",
-        "product/features/campaigns",
+      "Mobile App": [
+        "product/mobile-app/android",
+        "product/mobile-app/ios"
       ],
     },
+    {
+      "Others": [
+        "product/others/interactive-messages",
+        "product/others/webhook-events",
+        "product/others/websocket-events",
+        "product/others/cookies"
+      ],
+    },
+  ],
+  userGuide:
+  [
+    // {"User Guide Info":
+    // [
+    //   "user-guide",
+    // "user-guide/privacy-policy",
+    // ]
+    // },
+    // {
+    // type: 'category',
+    // label: 'Product Info',
+    // items:
+    // [
+    //   "user-guide/about-chatwoot",
+    //   "user-guide/installation-instruction",
+    // ]},
+    {
+      "Setup Chatwoot Account":[
+        "user-guide/configure-chatwoot-account",
+        "user-guide/profile-settings",
+        "user-guide/account-settings",
+        "user-guide/add-agent-settings",
+        "user-guide/add-inbox-settings",
+        "user-guide/setting-up-chatwootwidget",
+        "user-guide/add-teams-settings",
+        "user-guide/add-label-settings",
+        "user-guide/canned-response-settings",
+        "user-guide/integrations",
+        "user-guide/applications",
+      ]
+    },
+    {
+      "Conversations":[
+        "user-guide/conversation-workflow",
+      ]
+    },
+    {
+      "Contacts":[
+        "user-guide/contacts",
+      ]
+    },
+    {
+      "Reports":[
+        "user-guide/reports",
+      ]
+    },
+    // {"Other":[
+    //   "user-guide/backup-and-restore",
+    //   "user-guide/code-and-patch-updates",
+    //   "user-guide/glossary"
+    // ]}
   ],
   ContributingGuide: [
     { "Getting Started": ["contributing-guide"] },

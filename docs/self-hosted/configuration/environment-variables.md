@@ -55,6 +55,15 @@ SMTP_USERNAME=
 SMTP_PASSWORD=
 ```
 
+#### Amazon SES
+```bash
+SMTP_ADDRESS=email-smtp.<region>.amazonaws.com
+SMTP_AUTHENTICATION=plain
+SMTP_ENABLE_STARTTLS_AUTO=true
+SMTP_USERNAME=<Your SMTP username>
+SMTP_PASSWORD=<Your SMTP password>
+```
+
 #### SendGrid
 ```bash
 SMTP_ADDRESS=smtp.sendgrid.net
@@ -196,3 +205,11 @@ Or you can generate a VAPID key from https://d3v.one/vapid-key-generator/
 ### Using CDN for asset delivery
 
 With the release v1.8.0, we are enabling CDN support for Chatwoot. If you have a high traffic website, we recommend to setup CDN for your asset delivery. Read setting up [CloudFront as your CDN](/docs/self-hosted/deployment/performance/cloudfront-cdn) guide.
+
+### Disable new user signup
+
+By default, Chatwoot will allow users to create an account from the login page. However, if you are setting up a private server, you can disable signup using:
+
+```bash
+ENABLE_ACCOUNT_SIGNUP=false
+```

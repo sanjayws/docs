@@ -5,7 +5,7 @@ title: "Caprover Chatwoot Production deployment guide"
 
 ## Caprover Overview
 
-Caprover is an extremely easy to use application server management tool. It is blazing fast and uses Docker under the hood. Chatwoot has been made available as a one-click app in Chatwoot, and the deployment process is straightforward.
+Caprover is an extremely easy to use application server management tool. It is blazing fast and uses Docker under the hood. Chatwoot has been made available as a one-click app in Caprover, and the deployment process is straightforward.
 
 
 ## Setup Chatwoot Using Caprover
@@ -59,12 +59,28 @@ To update your chatwoot installation to the latest version in Caprover, Run the 
 ```
 
 ## Accessing Rails Console
+
+Login to the server where you have caprover installed and execute the following commands.
+
 ```
 # access the shell inside the container
 docker exec -it $(docker ps --filter name=srv-captain--chatwoot-web -q) /bin/sh
 # start rails console
 RAILS_ENV=production bundle exec rails c
 ```
+
+## Common Errors
+
+### API requests failing with "You need to sign in or sign up before continuing."
+
+Nginx by default strip of headers with `_` . head over to the Nginx configuration option in caprover under the chatwoot web and add the following directive.
+
+```
+  # Nginx strips out underscore in headers by default
+  # Chatwoot relies on underscore in headers for API
+  # Make sure that the config is set to on.
+  underscores_in_headers on;
+  ```
 
 
 ## Further references
